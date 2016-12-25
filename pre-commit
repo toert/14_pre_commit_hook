@@ -1,0 +1,11 @@
+#!/bin/sh
+
+
+python3 tests.py
+exit_code=$(echo $?)
+if [ $exit_code = 1 ]; then
+	echo "Commit created!"
+else
+	echo "Some tests have failed. Commit wasn't created!"
+  	exit 1
+fi
